@@ -1,0 +1,50 @@
+<div style="margin-top: 10%">
+    <form class="form-group" #loginForm="ngForm">
+        <input class="form-control" #username="ngModel" required type="text" placeholder="username" id="username" [(ngModel)]="loginRequest.name" name="username" /><br />
+        <span class="alert alert-warning" *ngIf="username.errors?.required && username.touched">please enter a user name</span
+    ><br *ngIf="username.errors?.required && username.touched" />
+    <br *ngIf="username.errors?.required && username.touched" />
+    <input
+      class="form-control"
+      #password="ngModel"
+      required
+      id="password"
+      type="text"
+      placeholder="password"
+      id="password"
+      [(ngModel)]="loginRequest.password"
+      name="password"
+    /><br />
+    <span
+      class="alert alert-warning"
+      *ngIf="password.errors?.required && password.touched"
+      >please enter a password</span
+    ><br *ngIf="password.errors?.required && password.touched" />
+    <br *ngIf="password.errors?.required && password.touched" />
+    <select
+      class="form-control"
+      #type="ngModel"
+      required
+      id="type"
+      name="type"
+      id="type"
+      [(ngModel)]="loginRequest.type"
+    >
+      <option *ngFor="let type of types"> {{ type }}</option> </select
+    ><br />
+    <span
+      class="alert alert-warning"
+      *ngIf="type.errors?.required && type.touched"
+      >please enter a type</span
+    ><br *ngIf="type.errors?.required && type.touched" /><br
+      *ngIf="type.errors?.required && type.touched"
+    />
+    <button
+      class="btn btn-block btn-primary"
+      [disabled]="!loginForm.form.valid"
+      (click)="tryLogin()"
+    >
+      Login
+    </button>
+  </form>
+</div>

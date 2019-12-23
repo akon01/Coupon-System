@@ -1,0 +1,10 @@
+<p class="text-left">
+    name: {{ customer.custName }} <br /> password: {{ customer.password }} <br /> coupons:
+</p>
+<ul class="text-left  list-group overflow-auto">
+    <li class="list-group-item-primary" *ngFor="let coupon of customerCoupons">
+        title: {{ coupon.title }} <br />message: {{ coupon.message }} <br />
+        <a class="btn-info" routerLink="/adminShowCoupon/{{ coupon.id }}">show coupon detalis</a
+    ><br />
+  </li>
+</ul>

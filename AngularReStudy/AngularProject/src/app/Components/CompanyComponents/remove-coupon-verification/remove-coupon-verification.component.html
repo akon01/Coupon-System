@@ -1,0 +1,8 @@
+<div style="height: 100%;width: 100%;" class="overflow-auto">
+    <app-coupon-preview></app-coupon-preview> <br />
+    <p class="alert alert-warning ">
+        are you sure you want to delete this coupon?
+        <input class="btn btn-primary btn-block" type="button" value="yes" (click)="deleteCoupon()" />
+        <input class="btn btn-primary btn-block" type="button" value="no" (click)="goBackToAllCoupons()" />
+    </p>
+</div>

@@ -1,0 +1,141 @@
+<form style="width: 100%;height: 100%;" class="form-group overflow-auto" #couponForm="ngForm">
+    Title:
+    <input class="form-control" #title="ngModel" disabled required type="text" placeholder="title" id="title" [(ngModel)]="coupon.title" name="title" /><br />
+    <span class="alert alert-warning" *ngIf="title.errors?.required && title.touched">please enter a title</span
+  ><br *ngIf="title.errors?.required && title.touched" /><br
+    *ngIf="title.errors?.required && title.touched"
+  />
+  Message:
+  <input
+    class="form-control"
+    #message="ngModel"
+    disabled
+    required
+    id="message"
+    type="text"
+    placeholder="message"
+    id="message"
+    [(ngModel)]="coupon.message"
+    name="message"
+  /><br />
+  <span
+    class="alert alert-warning"
+    *ngIf="message.errors?.required && message.touched"
+    >please enter a message</span
+  ><br *ngIf="message.errors?.required && message.touched" />
+  <br *ngIf="message.errors?.required && message.touched" />
+  Expiration Date:
+  <input
+    class="form-control"
+    #date="ngModel"
+    id="date"
+    appDateValidator
+    required
+    [min]="minDate"
+    type="date"
+    placeholder="endDate"
+    id="endDate"
+    [(ngModel)]="coupon.endDate"
+    name="endDate"
+  /><br />
+  <span
+    class="alert alert-warning"
+    *ngIf="date.errors?.required && date.touched"
+    >please enter a date</span
+  ><br *ngIf="date.errors?.required && date.touched" />
+  <br *ngIf="date.errors?.required && date.touched" />
+  <span
+    class="alert alert-warning"
+    *ngIf="date.errors?.dateValidator && date.touched"
+    >date must be after today</span
+  ><br *ngIf="date.errors?.dateValidator && date.touched" /><br
+    *ngIf="date.errors?.dateValidator && date.touched"
+  />
+  Amount:
+  <input
+    class="form-control"
+    #amount="ngModel"
+    disabled
+    required
+    min="1"
+    id="amount"
+    type="number"
+    placeholder="amount"
+    id="amount"
+    [(ngModel)]="coupon.amount"
+    name="amount"
+  /><br />
+  <span
+    class="alert alert-warning"
+    *ngIf="amount.errors?.required && amount.touched"
+    >please enter an amount</span
+  ><br *ngIf="amount.errors?.required && amount.touched" /><br
+    *ngIf="amount.errors?.required && amount.touched"
+  />
+  Price:
+  <input
+    class="form-control"
+    #price="ngModel"
+    required
+    min="1"
+    id="price"
+    type="number"
+    placeholder="price"
+    id="price"
+    [(ngModel)]="coupon.price"
+    name="price"
+  /><br />
+  <span
+    class="alert alert-warning"
+    *ngIf="price.errors?.required && price.touched"
+    >please enter a price</span
+  ><br *ngIf="price.errors?.required && price.touched" /><br
+    *ngIf="price.errors?.required && price.touched"
+  />
+  Type:
+  <select
+    class="form-control"
+    #type="ngModel"
+    disabled
+    required
+    id="type"
+    name="type"
+    id="type"
+    [(ngModel)]="coupon.type"
+  >
+    <option> {{ coupon.type }}</option> </select
+  ><br />
+  <span
+    class="alert alert-warning"
+    *ngIf="type.errors?.required && type.touched"
+    >please choose a type</span
+  ><br *ngIf="type.errors?.required && type.touched" /><br
+    *ngIf="type.errors?.required && type.touched"
+  />
+  Image URL
+  <input
+    class="form-control"
+    #imgSrc="ngModel"
+    required
+    disabled
+    type="text"
+    placeholder="image URL"
+    id="imgSrc"
+    [(ngModel)]="coupon.image"
+    name="imgSrc"
+  /><br />
+  <span
+    class="alert alert-warning"
+    *ngIf="imgSrc.errors?.required && imgSrc.touched"
+    >please enter a url of an image</span
+  ><br *ngIf="imgSrc.errors?.required && imgSrc.touched" /><br
+    *ngIf="imgSrc.errors?.required && imgSrc.touched"
+  />
+  <button
+    class="btn btn-block btn-primary"
+    [disabled]="!couponForm.form.valid"
+    (click)="updateCoupon()"
+  >
+    Update Coupon
+  </button>
+</form>

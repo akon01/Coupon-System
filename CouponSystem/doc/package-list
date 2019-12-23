@@ -1,0 +1,7 @@
+com.CouponSystem.CouponSystem
+com.CouponSystem.CouponSystem.Entities
+com.CouponSystem.CouponSystem.Exceptions
+com.CouponSystem.CouponSystem.Repositories
+com.CouponSystem.CouponSystem.RestControllers
+com.CouponSystem.CouponSystem.Services
+com.CouponSystem.CouponSystem.Tasks

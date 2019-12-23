@@ -1,0 +1,14 @@
+<div style="height: 100%;width: 100%;" class="overflow-auto">
+    <ul class="text-left  list-group">
+        <li class="list-group-item-primary" *ngFor="let coupon of coupons">
+            title: {{ coupon.title }} <br /> message: {{ coupon.message }} <br /> creation date: {{ coupon.startDate | date: short }} <br /> expiration date: {{ coupon.endDate | date: short }} <br /> amount: {{ coupon.amount }} <br />price: {{ coupon.price
+            }} <br />type: {{ coupon.type }}
+            <br />
+            <img [src]="coupon.image" /> <br />
+            <button class="btn-info btn-block" (click)="buyCoupon(coupon)">
+        buy Coupon!
+      </button>
+        </li>
+        <br />
+    </ul>
+</div>

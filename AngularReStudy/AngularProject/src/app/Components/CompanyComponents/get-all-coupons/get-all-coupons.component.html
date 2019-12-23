@@ -1,0 +1,44 @@
+<div style="height: 100%;width: 100%;" class="overflow-auto">
+    <div *ngIf="coupons.length >= 1" class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" [(ngModel)]="filterCheck" (click)="toggleFilter()" />
+        <label class="form-check-label" for="defaultCheck1">
+      Filter
+    </label>
+    </div>
+    <div class="text-left" hidden id="filterDiv">
+        Filter by:
+        <div class="form-group">
+            <select class="form-control" #filterSelect id="filterType" (change)="changeFilter()">
+        <option value="type">type</option>
+        <option value="price">price</option>
+        <option value="date">date</option>
+      </select>
+
+            <select class="form-control" *ngIf="filterType == 'id'" id="idFilter">
+        <option *ngFor="let coupon of coupons">{{ coupon.id }}</option>
+      </select>
+            <input class="form-control" *ngIf="filterType == 'price'" type="number" id="numberFilter" />
+            <select class="form-control" *ngIf="filterType == 'type'" id="typeFilter">
+        <option *ngFor="let type of couponTypes">{{ type }}</option>
+      </select>
+            <input class="form-control" *ngIf="filterType == 'date'" type="date" name="date" id="dateFilter" />
+            <input class="form-control" type="button" value="filter" (click)="filter()" />
+        </div>
+    </div>
+    <ul class="list-group ">
+        <li style="border:solid 1px black" class="text-left list-group-item-primary" *ngFor="let coupon of coupons">
+            title: {{ coupon.title }} <br /> message: {{ coupon.message }} <br /> creation date: {{ coupon.startDate | date: short }} <br /> expiration date: {{ coupon.endDate | date: short }} <br /> amount: {{ coupon.amount }} <br /> price: {{ coupon.price
+            }} <br /> type: {{ coupon.type }}
+            <br />
+            <a class="btn-info" routerLink="/showCoupon/{{ coupon.id }}">Show coupon detalis</a
+      ><br />
+      <a class="btn-info" routerLink="/removeCoupon/{{ coupon.id }}"
+        >Remove coupon</a
+      ><br />
+      <a class="btn-info" routerLink="/updateCoupon/{{ coupon.id }}"
+        >Update coupon</a
+      >
+    </li>
+    <br />
+  </ul>
+</div>

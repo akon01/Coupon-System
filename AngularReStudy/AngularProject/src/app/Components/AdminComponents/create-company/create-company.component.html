@@ -1,0 +1,55 @@
+<form class="form-group" #companyForm="ngForm">
+    Name: <br />
+    <input class="form-control" #name="ngModel" required type="text" placeholder="name" id="name" [(ngModel)]="newCompany.compName" name="name" /><br />
+    <span class="alert alert-info" *ngIf="name.errors?.required && name.touched">please enter a name</span
+  ><br *ngIf="name.errors?.required && name.touched" /><br
+    *ngIf="name.errors?.required && name.touched"
+  />
+  Password: <br />
+  <input
+    class="form-control"
+    #password="ngModel"
+    required
+    id="password"
+    type="text"
+    placeholder="password"
+    id="password"
+    [(ngModel)]="newCompany.password"
+    name="password"
+  /><br />
+  <span
+    class="alert alert-info"
+    *ngIf="password.errors?.required && password.touched"
+    >please enter a password</span
+  ><br *ngIf="password.errors?.required && password.touched" /><br
+    *ngIf="password.errors?.required && password.touched"
+  />
+  Email: <br />
+  <input
+    class="form-control"
+    #email="ngModel"
+    id="email"
+    required
+    type="email"
+    email
+    placeholder="email"
+    id="email"
+    [(ngModel)]="newCompany.email"
+    name="email"
+  /><br />
+  <span class="alert alert-info" *ngIf="email.errors?.required && email.touched"
+    >please enter an email</span
+  ><br *ngIf="email.errors?.required && email.touched" />
+  <br *ngIf="email.errors?.required && email.touched" />
+  <span class="alert alert-info" *ngIf="email.errors?.email && email.touched"
+    >please enter a valid email address</span
+  ><br *ngIf="email.errors?.email && email.touched" />
+  <br *ngIf="email.errors?.email && email.touched" />
+  <button
+    class="btn-info btn-block"
+    [disabled]="!companyForm.form.valid"
+    (click)="addNewCompany()"
+  >
+    Create Company!
+  </button>
+</form>

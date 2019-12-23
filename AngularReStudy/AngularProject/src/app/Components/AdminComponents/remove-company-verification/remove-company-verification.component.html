@@ -1,0 +1,10 @@
+<div style="height: 100%;width: 100%;" class="overflow-auto">
+    <p>
+        Company name: {{ company.compName }} <br /> Company email: {{ company.email }}
+    </p>
+    <div class="alert alert-warning ">
+        are you sure you want to delete this company?
+        <input class="btn btn-primary btn-block" type="button" value="yes" (click)="deleteCompany()" />
+        <input class="btn btn-primary btn-block" type="button" value="no" (click)="goBackToAllCompanies()" />
+    </div>
+</div>

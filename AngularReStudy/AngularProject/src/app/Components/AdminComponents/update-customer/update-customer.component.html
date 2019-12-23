@@ -1,0 +1,33 @@
+<div class="overflow-auto">
+    <form class="form-group" #customerForm="ngForm">
+        Name: <br />
+        <input class="form-control" #name="ngModel" disabled required type="text" placeholder="name" id="name" [(ngModel)]="customer.custName" name="name" /><br />
+        <span *ngIf="name.errors?.required && name.touched">please enter a name</span
+    ><br *ngIf="name.errors?.required && name.touched" />
+    <br *ngIf="name.errors?.required && name.touched" />
+    Password: <br />
+    <input
+      class="form-control"
+      #password="ngModel"
+      required
+      id="password"
+      type="text"
+      placeholder="password"
+      id="password"
+      [(ngModel)]="customer.password"
+      name="password"
+    /><br />
+    <span *ngIf="password.errors?.required && password.touched"
+      >please enter a password</span
+    ><br *ngIf="password.errors?.required && password.touched" /><br
+      *ngIf="password.errors?.required && password.touched"
+    />
+    <button
+      class="btn-info btn-block"
+      [disabled]="!customerForm.form.valid"
+      (click)="updateCustomer()"
+    >
+      Update customer!
+    </button>
+  </form>
+</div>

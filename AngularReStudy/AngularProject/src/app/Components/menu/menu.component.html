@@ -1,0 +1,31 @@
+<div *ngIf="customerLoggedIn">
+    <a class="btn btn-outline-primary" routerLink="/purchaseCoupon">
+    Purchase Coupon
+  </a>
+    <a class="btn btn-outline-primary" routerLink="/myPurchasedCoupons">Get All Purchased Coupons
+  </a>
+</div>
+
+<div *ngIf="companyLoggedIn">
+    <a class="btn btn-outline-primary" routerLink="/createCoupon">
+    Create Coupon
+  </a>
+    <a class="btn btn-outline-primary" routerLink="/getAllCoupons">
+    My Coupons
+  </a>
+    <a class="btn btn-outline-primary" routerLink="/myInfo"> My Info </a>
+</div>
+
+<div *ngIf="adminLoggedIn">
+    <a class="btn btn-outline-primary" routerLink="/companies"> Companies </a>
+    <a class="btn btn-outline-primary" routerLink="/createCompany">
+    Create Company
+  </a>
+    <a class="btn btn-outline-primary" routerLink="/customers"> Customers </a>
+    <a class="btn btn-outline-primary" routerLink="/createCustomer">
+    Create Customer
+  </a>
+</div>
+<div *ngIf="adminLoggedIn || companyLoggedIn || customerLoggedIn">
+    <a class="btn btn-outline-primary" (click)="logout()">Logout</a>
+</div>

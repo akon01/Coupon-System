@@ -1,0 +1,15 @@
+<section>
+    <header>
+        <app-header></app-header>
+    </header>
+    <aside>
+        <app-menu [loginType]="loginType" (logout)="logout($event)"></app-menu>
+    </aside>
+    <main>
+        <app-home *ngIf="loggedIn"></app-home>
+        <app-login (loginType)="changeLogin($event)" *ngIf="!loggedIn"> </app-login>
+    </main>
+    <footer>
+        <app-footer></app-footer>
+    </footer>
+</section>

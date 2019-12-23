@@ -1,0 +1,25 @@
+<div class="overflow-auto" *ngIf="customers">
+    <ul class="list-group ">
+        <li class="text-left list-group-item-primary" *ngFor="let customer of customers">
+            name: {{ customer.custName }} <br /> password: {{ customer.password }} <br /> coupons:
+            <ul class="list-group list-group-flush">
+                <li class="text-left list-group-item-secondary" *ngFor="let coupon of customer.coupons">
+                    title: {{ coupon.title }}
+                </li>
+            </ul>
+            <a class="btn-info btn-block" routerLink="/showCustomer/{{ customer.id }}">show customer detalis</a
+      >
+      <a
+        class="btn-info btn-block"
+        routerLink="/removeCustomer/{{ customer.id }}"
+        >remove customer</a
+      >
+      <a
+        class="btn-info btn-block"
+        routerLink="/updateCustomer/{{ customer.id }}"
+        >update customer</a
+      >
+    </li>
+    <br />
+  </ul>
+</div>

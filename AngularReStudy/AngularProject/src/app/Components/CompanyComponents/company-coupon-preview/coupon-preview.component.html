@@ -1,0 +1,10 @@
+<div style="height: 100%;width: 100%;" class="overflow-auto">
+    <p class="text-left">title: {{ coupon.title }}</p>
+    <p class="text-left">message: {{ coupon.message }}</p>
+    <p class="text-left">creation date: {{ coupon.startDate | date: short }}</p>
+    <p class="text-left">expiration date: {{ coupon.endDate | date: short }}</p>
+    <p class="text-left">price: {{ coupon.price }}</p>
+    <p class="text-left">amount: {{ coupon.amount }}</p>
+    <p class="text-left">type: {{ coupon.type }}</p>
+    <img [src]="coupon.image" />
+</div>

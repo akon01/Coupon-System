@@ -1,0 +1,21 @@
+<div class="overflow-auto" *ngIf="companies">
+    <ul class="list-group ">
+        <li class="text-left list-group-item-primary" *ngFor="let company of companies">
+            name: {{ company.compName }} <br /> email: {{ company.email }} <br /> coupons:
+            <ul class="list-group list-group-flush">
+                <li class="text-left list-group-item-secondary" *ngFor="let companyCoupon of company.coupons">
+                    title: {{ companyCoupon.title }}
+                </li>
+            </ul>
+            <a class="btn-info btn-block" routerLink="/showCompany/{{ company.id }}">show comapny detalis</a
+      >
+      <a class="btn-info btn-block" routerLink="/removeCompany/{{ company.id }}"
+        >remove company</a
+      >
+      <a class="btn-info btn-block" routerLink="/updateCompany/{{ company.id }}"
+        >update company</a
+      >
+      <br />
+    </li>
+  </ul>
+</div>
